@@ -21,16 +21,12 @@ export const Experience = () => {
       <Sky />
       <Environment preset="sunset" />
       <Office />
-      <group position-y={-1}>
-        <ContactShadows
-          opacity={0.42}
-          scale={10}
-          blur={1}
-          far={10}
-          resolution={256}
-          color="#000000"
-        />
-
+      <group
+        name="typing"
+        position={[-0.474, -1.215, 0.409]}
+        rotation={[Math.PI, -0.084, Math.PI]}
+        scale={[1, 1.199, 1]}
+      >
         <Avatar animation={animation} />
       </group>
     </>
