@@ -20,10 +20,12 @@ export const Experience = () => {
       <OrbitControls />
       <Sky />
       <Environment preset="sunset" />
-      <Office />
+      <group position={[1.5, 1, 1]}>
+        <Office />
+      </group>
       <group
         name="typing"
-        position={[-0.474, -1.215, 0.409]}
+        position={[0.95, -0.2, 1.5]}
         rotation={[Math.PI, -0.084, Math.PI]}
         scale={[1, 1.199, 1]}
       >

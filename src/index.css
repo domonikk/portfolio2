@@ -1,26 +1,13 @@
-@import url("https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200;0,400;0,500;0,800;1,200;1,900&display=swap");
-
-#root {
-  width: 100vw;
-  height: 100vh;
-}
-
+@import url("https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,400;0,500;0,800;1,200;1,400;1,900&display=swap");
 body {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
-  scroll-behavior: smooth;
-  color-scheme: dark;
+  font-family: "Source Code Pro", "Helvetica Neue", Helvetica;
 }
 
 #root {
-  width: 100vw;
+  width: 100dvw;
   height: 100vh;
-}
-
-body {
-  margin: 0;
 }
 
 @tailwind base;
