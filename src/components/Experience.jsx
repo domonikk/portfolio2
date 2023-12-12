@@ -17,7 +17,6 @@ export const Experience = () => {
   });
   return (
     <>
-      <OrbitControls />
       <Sky />
       <Environment preset="sunset" />
       <group position={[1.5, 1, 1]}>

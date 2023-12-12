@@ -2,6 +2,7 @@ import { Canvas } from "@react-three/fiber";
 import { Experience } from "./components/Experience";
 import { ScrollControls, Scroll } from "@react-three/drei";
 import Interface from "./components/Interface";
+import WorkExperience from "./components/WorkExperience";
 import { useState } from "react";
 import ScrollManager from "./components/ScrollManager";
 import Menu from "./components/Menu";
@@ -19,6 +20,7 @@ function App() {
           </Scroll>
           <Scroll html>
             <Interface />
+            <WorkExperience />
           </Scroll>
         </ScrollControls>
       </Canvas>

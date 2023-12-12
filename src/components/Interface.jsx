@@ -26,26 +26,30 @@ export default Interface;
 
 const AboutSection = () => {
   return (
-    <Section>
-      <h1 className="text-5xl font-extrabold leading-snug">
-        Hi, I'm
-        <br />
-        <span className="bg-white px-1 ">Domonique Eccleston</span>
-      </h1>
-      <p className="text-lg text-gray-600 stroke-white-950 mt-4">
-        I'm a front-end developer with expertise
-        <br />
-        in ReactJS and Tailwind CSS.
-        <br />
-        <br />
-        Aspiring to become a full-stack developer.
-      </p>
-      <button
-        className={`bg-teal-600 text-white py-4 px-8 
-      rounded-lg font-bold text-lg mt-16`}
+    <Section className={`relative w-full h-screen mx-auto`}>
+      <div
+        className={`absolute inset-0 top-[120px]  max-w-7xl mx-auto  flex flex-row flex-col items-start gap-5`}
       >
-        Contact me
-      </button>
+        <h1 className="text-5xl font-extrabold leading-snug">
+          Hi, I'm
+          <br />
+          <span className="bg-white px-1 ">Domonique Eccleston</span>
+        </h1>
+        <p className="text-lg text-gray-600 stroke-white-950 mt-4">
+          I'm a front-end developer with expertise
+          <br />
+          in ReactJS and Tailwind CSS.
+          <br />
+          <br />
+          Aspiring to become a full-stack developer.
+        </p>
+        <button
+          className={`bg-teal-600 text-white py-4 px-8 
+      rounded-lg font-bold text-lg mt-16`}
+        >
+          Contact me
+        </button>
+      </div>
     </Section>
   );
 };
