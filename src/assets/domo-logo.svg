@@ -1,83 +1,7 @@
-import React from "react";
-
-const Menu = (props) => {
-  const { onSectionChange } = props;
-  return (
-    <>
-      <div class="fixed z-50 w-full h-16 max-w-lg -translate-x-1/2 bg-white border border-gray-200 rounded-full bottom-4 left-1/2 dark:bg-gray-700 dark:border-gray-600">
-        <div class="grid h-full max-w-lg grid-cols-5 mx-auto">
-          <button
-            data-tooltip-target="tooltip-home"
-            type="button"
-            class="inline-flex flex-col items-center justify-center px-5 rounded-s-full hover:bg-gray-50 dark:hover:bg-gray-800 group"
-          >
-            <svg
-              class="w-5 h-5 mb-1 text-gray-500 dark:text-gray-400 group-hover:text-primary dark:group-hover:text-primarydark"
-              aria-hidden="true"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="currentColor"
-              viewBox="0 0 20 20"
-            >
-              <path d="m19.707 9.293-2-2-7-7a1 1 0 0 0-1.414 0l-7 7-2 2a1 1 0 0 0 1.414 1.414L2 10.414V18a2 2 0 0 0 2 2h3a1 1 0 0 0 1-1v-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v4a1 1 0 0 0 1 1h3a2 2 0 0 0 2-2v-7.586l.293.293a1 1 0 0 0 1.414-1.414Z" />
-            </svg>
-            <span class="sr-only">Home</span>
-          </button>
-          <div
-            id="tooltip-home"
-            role="tooltip"
-            class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700"
-          >
-            Home
-            <div class="tooltip-arrow" data-popper-arrow></div>
-          </div>
-
-          <button
-            data-tooltip-target="brain"
-            type="button"
-            class="inline-flex flex-col items-center justify-center px-5 hover:bg-gray-50 dark:hover:bg-gray-800 group"
-          >
-            <svg
-              class="w-6 h-6 text-gray-500 dark:text-white  group-hover:text-primary dark:group-hover:text-primarydark"
-              aria-hidden="true"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="currentColor"
-              viewBox="0 0 20 20"
-            >
-              <path d="M9 19V.352A3.451 3.451 0 0 0 7.5 0a3.5 3.5 0 0 0-3.261 2.238A3.5 3.5 0 0 0 2.04 6.015a3.518 3.518 0 0 0-.766 1.128c-.042.1-.064.209-.1.313a3.34 3.34 0 0 0-.106.344 3.463 3.463 0 0 0 .02 1.468A4.016 4.016 0 0 0 .3 10.5l-.015.036a3.861 3.861 0 0 0-.216.779A3.968 3.968 0 0 0 0 12a4.032 4.032 0 0 0 .107.889 4 4 0 0 0 .2.659c.006.014.015.027.021.041a3.85 3.85 0 0 0 .417.727c.105.146.219.284.342.415.072.076.148.146.225.216.1.091.205.179.315.26.11.081.2.14.308.2.02.013.039.028.059.04v.053a3.506 3.506 0 0 0 3.03 3.469 3.426 3.426 0 0 0 4.154.577A.972.972 0 0 1 9 19Zm10.934-7.68a3.956 3.956 0 0 0-.215-.779l-.017-.038a4.016 4.016 0 0 0-.79-1.235 3.417 3.417 0 0 0 .017-1.468 3.387 3.387 0 0 0-.1-.333c-.034-.108-.057-.22-.1-.324a3.517 3.517 0 0 0-.766-1.128 3.5 3.5 0 0 0-2.202-3.777A3.5 3.5 0 0 0 12.5 0a3.451 3.451 0 0 0-1.5.352V19a.972.972 0 0 1-.184.546 3.426 3.426 0 0 0 4.154-.577A3.506 3.506 0 0 0 18 15.5v-.049c.02-.012.039-.027.059-.04.106-.064.208-.13.308-.2s.214-.169.315-.26c.077-.07.153-.14.225-.216a4.007 4.007 0 0 0 .459-.588c.115-.176.215-.361.3-.554.006-.014.015-.027.021-.041.087-.213.156-.434.205-.659.013-.057.024-.115.035-.173.046-.237.07-.478.073-.72a3.948 3.948 0 0 0-.066-.68Z" />
-            </svg>
-            <span class="sr-only">Skills</span>
-          </button>
-          <div
-            id="tooltip-wallet"
-            role="tooltip"
-            class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700"
-          >
-            Skills
-            <div class="tooltip-arrow" data-popper-arrow></div>
-          </div>
-          <div class="flex items-center justify-center">
-            <button
-              data-tooltip-target="tooltip-new"
-              type="button"
-              class="inline-flex items-center justify-center w-10 h-10 font-medium bg-blue-600 rounded-full hover:bg-blue-700 group focus:ring-4 focus:ring-blue-300 focus:outline-none dark:focus:ring-blue-800"
-            >
-              <svg
-                version="1.1"
-                id="Layer_1"
-                xmlns="http://www.w3.org/2000/svg"
-                xmlns:xlink="http://www.w3.org/1999/xlink"
-                x="0px"
-                y="0px"
-                width="100%"
-                viewBox="0 0 500 500"
-                enable-background="new 0 0 500 500"
-                xml:space="preserve"
-              >
-                <path
-                  fill="#FFFFFF"
-                  opacity="1.000000"
-                  stroke="none"
-                  d="
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="100%" viewBox="0 0 500 500" enable-background="new 0 0 500 500" xml:space="preserve">
+<path fill="#FFFFFF" opacity="1.000000" stroke="none" 
+	d="
 M501.000000,191.000000 
 	C501.000000,294.666656 501.000000,397.833282 501.000000,500.999939 
 	C334.333405,500.999969 167.666794,500.999969 1.000145,501.000000 
@@ -123,13 +47,9 @@ M346.855255,233.958694
 	C332.402008,74.702652 341.112579,84.890518 348.127228,96.518097 
 	C362.846924,120.917747 369.357880,147.247681 367.172394,175.707443 
 	C365.558105,196.729080 358.312103,215.840683 346.855255,233.958694 
-z"
-                />
-                <path
-                  fill="#5CE1E6"
-                  opacity="1.000000"
-                  stroke="none"
-                  d="
+z"/>
+<path fill="#5CE1E6" opacity="1.000000" stroke="none" 
+	d="
 M313.042023,372.151184 
 	C309.228851,369.753296 305.678955,366.084167 301.546417,365.228210 
 	C293.503998,363.562317 285.134888,363.473572 275.961456,362.646942 
@@ -216,13 +136,9 @@ M198.417145,253.245148
 	C192.160019,279.670044 196.481842,278.819733 201.588226,277.892090 
 	C203.790131,276.845459 207.359100,277.362000 207.030960,273.368195 
 	C206.421600,265.951965 204.578445,259.022888 198.417145,253.245148 
-z"
-                />
-                <path
-                  fill="#01B3B3"
-                  opacity="1.000000"
-                  stroke="none"
-                  d="
+z"/>
+<path fill="#01B3B3" opacity="1.000000" stroke="none" 
+	d="
 M375.981567,246.848297 
 	C367.853058,240.196762 358.299286,236.731873 347.960602,234.134171 
 	C358.312103,215.840683 365.558105,196.729080 367.172394,175.707443 
@@ -258,13 +174,9 @@ M375.981567,246.848297
 	C399.446289,267.083405 391.401306,251.067734 377.020355,247.920944 
 	C377.020355,247.920944 377.006714,247.989365 377.090454,247.665619 
 	C376.776642,247.177353 376.379089,247.012833 375.981567,246.848297 
-z"
-                />
-                <path
-                  fill="#01B3B3"
-                  opacity="1.000000"
-                  stroke="none"
-                  d="
+z"/>
+<path fill="#01B3B3" opacity="1.000000" stroke="none" 
+	d="
 M102.664467,117.041336 
 	C102.981827,158.196213 102.926201,199.477112 103.015099,240.757706 
 	C103.052567,258.154663 97.143829,272.526093 82.754349,282.955322 
@@ -278,13 +190,9 @@ M102.664467,117.041336
 	C164.597672,436.001862 129.720428,415.505981 101.604080,383.791077 
 	C73.514526,352.106415 56.657974,315.111053 52.307003,273.023132 
 	C46.199810,213.946838 63.397575,161.968719 102.664467,117.041336 
-z"
-                />
-                <path
-                  fill="#01B3B3"
-                  opacity="1.000000"
-                  stroke="none"
-                  d="
+z"/>
+<path fill="#01B3B3" opacity="1.000000" stroke="none" 
+	d="
 M230.908066,51.918331 
 	C240.946732,60.373333 247.448914,71.410744 252.785553,83.075378 
 	C265.770630,111.457710 268.570587,141.643448 266.748260,172.296570 
@@ -295,13 +203,9 @@ M230.908066,51.918331
 	C196.834625,95.316208 198.179718,78.746147 199.150024,62.156219 
 	C199.358353,58.594444 200.768539,56.918568 204.395493,56.385654 
 	C213.260437,55.083118 222.073883,53.430210 230.908066,51.918331 
-z"
-                />
-                <path
-                  fill="#FCFEFE"
-                  opacity="1.000000"
-                  stroke="none"
-                  d="
+z"/>
+<path fill="#FCFEFE" opacity="1.000000" stroke="none" 
+	d="
 M230.795715,51.610298 
 	C222.073883,53.430210 213.260437,55.083118 204.395493,56.385654 
 	C200.768539,56.918568 199.358353,58.594444 199.150024,62.156219 
@@ -319,13 +223,9 @@ M230.795715,51.610298
 	C181.387054,91.545334 184.173950,63.217022 186.107147,34.856277 
 	C186.320312,31.729086 187.522583,31.179316 190.611328,31.621569 
 	C206.147186,33.846031 219.359741,40.602032 230.795715,51.610298 
-z"
-                />
-                <path
-                  fill="#FCFEFE"
-                  opacity="1.000000"
-                  stroke="none"
-                  d="
+z"/>
+<path fill="#FCFEFE" opacity="1.000000" stroke="none" 
+	d="
 M316.805054,268.449860 
 	C309.413330,273.835693 301.932648,278.784332 294.661987,284.024384 
 	C293.333588,284.981781 292.186584,287.089081 292.095795,288.728699 
@@ -341,13 +241,9 @@ M316.805054,268.449860
 	C294.464661,264.939240 294.958832,265.128906 295.452972,265.318542 
 	C298.961212,262.120392 302.469452,258.922241 305.977692,255.724091 
 	C312.291565,257.488556 313.777313,263.466125 316.805054,268.449860 
-z"
-                />
-                <path
-                  fill="#F6FDFD"
-                  opacity="1.000000"
-                  stroke="none"
-                  d="
+z"/>
+<path fill="#F6FDFD" opacity="1.000000" stroke="none" 
+	d="
 M207.970184,304.647705 
 	C171.721420,305.131989 135.456711,305.173492 99.192062,305.153198 
 	C93.672157,305.150116 92.293068,303.601318 92.286697,297.597107 
@@ -355,13 +251,9 @@ M207.970184,304.647705
 	C133.005554,296.176422 169.376022,296.151581 205.746475,296.129547 
 	C206.222733,296.129272 206.699081,296.305817 207.954269,296.553497 
 	C207.954269,299.025269 207.954269,301.605042 207.970184,304.647705 
-z"
-                />
-                <path
-                  fill="#F4FCFC"
-                  opacity="1.000000"
-                  stroke="none"
-                  d="
+z"/>
+<path fill="#F4FCFC" opacity="1.000000" stroke="none" 
+	d="
 M337.172974,333.754395 
 	C339.746643,330.639404 341.554474,325.999786 346.109833,327.484100 
 	C350.990021,329.074249 349.740112,334.021912 349.757812,337.864502 
@@ -372,13 +264,9 @@ M337.172974,333.754395
 	C335.494995,390.035004 336.128357,387.251343 336.147308,384.463531 
 	C336.248138,369.637115 336.162476,354.809479 336.234436,339.982697 
 	C336.243896,338.033997 336.787018,336.087860 337.172974,333.754395 
-z"
-                />
-                <path
-                  fill="#FAFEFE"
-                  opacity="1.000000"
-                  stroke="none"
-                  d="
+z"/>
+<path fill="#FAFEFE" opacity="1.000000" stroke="none" 
+	d="
 M377.044647,248.279205 
 	C391.401306,251.067734 399.446289,267.083405 394.390686,282.501221 
 	C389.800751,296.498932 375.887604,303.602020 359.818756,299.453430 
@@ -386,116 +274,33 @@ M377.044647,248.279205
 	C350.346039,292.094147 355.849731,292.838074 361.155396,292.119690 
 	C382.836823,289.184082 387.189026,263.009735 378.373657,250.746063 
 	C377.892365,250.076553 377.501770,249.341843 377.044647,248.279205 
-z"
-                />
-                <path
-                  fill="#09B6B6"
-                  opacity="1.000000"
-                  stroke="none"
-                  d="
+z"/>
+<path fill="#09B6B6" opacity="1.000000" stroke="none" 
+	d="
 M201.195953,277.930725 
 	C200.130844,270.216278 199.458008,262.463135 198.810532,254.223282 
 	C204.578445,259.022888 206.421600,265.951965 207.030960,273.368195 
 	C207.359100,277.362000 203.790131,276.845459 201.195953,277.930725 
-z"
-                />
-                <path
-                  fill="#6AE4E8"
-                  opacity="1.000000"
-                  stroke="none"
-                  d="
+z"/>
+<path fill="#6AE4E8" opacity="1.000000" stroke="none" 
+	d="
 M306.007324,255.654144 
 	C302.469452,258.922241 298.961212,262.120392 295.452972,265.318542 
 	C294.958832,265.128906 294.464661,264.939240 293.970520,264.749603 
 	C294.321686,261.359833 294.672882,257.970062 295.098267,253.864090 
 	C298.819946,254.325638 302.050476,254.726288 305.687134,255.284988 
 	C306.093231,255.443054 306.036987,255.584198 306.007324,255.654144 
-z"
-                />
-                <path
-                  fill="#FAFEFE"
-                  opacity="1.000000"
-                  stroke="none"
-                  d="
+z"/>
+<path fill="#FAFEFE" opacity="1.000000" stroke="none" 
+	d="
 M344.885620,291.800781 
 	C344.446716,291.903137 343.878632,291.738647 343.189484,291.292694 
 	C343.631073,291.185455 344.193787,291.359711 344.885620,291.800781 
-z"
-                />
-                <path
-                  fill="#FAFEFE"
-                  opacity="1.000000"
-                  stroke="none"
-                  d="
+z"/>
+<path fill="#FAFEFE" opacity="1.000000" stroke="none" 
+	d="
 M376.051208,247.134338 
 	C376.379089,247.012833 376.776642,247.177353 377.125305,247.664337 
 	C376.757874,247.797989 376.439362,247.609177 376.051208,247.134338 
-z"
-                />
-              </svg>
-              <span class="sr-only">Logo</span>
-            </button>
-          </div>
-          <div
-            id="tooltip-new"
-            role="tooltip"
-            class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700"
-          >
-            Domonique Eccleston
-            <div class="tooltip-arrow" data-popper-arrow></div>
-          </div>
-          <button
-            data-tooltip-target="tooltip-settings"
-            type="button"
-            class="inline-flex flex-col items-center justify-center px-5 hover:bg-gray-50 dark:hover:bg-gray-800 group"
-          >
-            <svg
-              class="w-5 h-5 mb-1 text-gray-500 dark:text-gray-400 group-hover:text-primary dark:group-hover:text-primarydark"
-              aria-hidden="true"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="currentColor"
-              viewBox="0 0 20 20"
-            >
-              <path d="M20 9V2a2 2 0 0 0-2-2H2a2 2 0 0 0-2 2v7h20ZM0 11v2a2 2 0 0 0 2 2h7v3H6a1 1 0 0 0 0 2h8a1 1 0 0 0 0-2h-3v-3h7a2 2 0 0 0 2-2v-2H0Z" />
-            </svg>
-            <span class="sr-only">Projects</span>
-          </button>
-          <div
-            id="tooltip-settings"
-            role="tooltip"
-            class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700"
-          >
-            Projects
-            <div class="tooltip-arrow" data-popper-arrow></div>
-          </div>
-          <button
-            data-tooltip-target="tooltip-profile"
-            type="button"
-            class="inline-flex flex-col items-center justify-center px-5 rounded-e-full hover:bg-gray-50 dark:hover:bg-gray-800 group"
-          >
-            <svg
-              class="w-5 h-5 mb-1 text-gray-500 dark:text-gray-400 group-hover:text-primary dark:group-hover:text-primarydark"
-              aria-hidden="true"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="currentColor"
-              viewBox="0 0 20 20"
-            >
-              <path d="M10 0a10 10 0 1 0 10 10A10.011 10.011 0 0 0 10 0Zm0 5a3 3 0 1 1 0 6 3 3 0 0 1 0-6Zm0 13a8.949 8.949 0 0 1-4.951-1.488A3.987 3.987 0 0 1 9 13h2a3.987 3.987 0 0 1 3.951 3.512A8.949 8.949 0 0 1 10 18Z" />
-            </svg>
-            <span class="sr-only">Contact</span>
-          </button>
-          <div
-            id="tooltip-profile"
-            role="tooltip"
-            class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700"
-          >
-            Contact Me
-            <div class="tooltip-arrow" data-popper-arrow></div>
-          </div>
-        </div>
-      </div>
-    </>
-  );
-};
-
-export default Menu;
+z"/>
+</svg>
