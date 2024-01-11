@@ -21,11 +21,22 @@ export function Avatar(props) {
   const { animations: typingAnimation } = useFBX("animations/Typing.fbx");
   const { animations: boredAnimation } = useFBX("animations/Bored.fbx");
   const { animations: fallingAnimation } = useFBX("animations/Falling.fbx");
+  const { animations: thinkingAnimation } = useFBX("animations/Thinking.fbx");
+  const { animations: dancingAnimation } = useFBX("animations/Dancing.fbx");
   typingAnimation[0].name = "Typing";
   boredAnimation[0].name = "Bored";
   fallingAnimation[0].name = "Falling";
+  thinkingAnimation[0].name = "Thinking";
+  dancingAnimation[0].name = "Dancing";
+
   const { actions } = useAnimations(
-    [typingAnimation[0], boredAnimation[0], fallingAnimation[0]],
+    [
+      typingAnimation[0],
+      boredAnimation[0],
+      fallingAnimation[0],
+      thinkingAnimation[0],
+      dancingAnimation[0],
+    ],
     group
   );
   useEffect(() => {

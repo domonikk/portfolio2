@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 const Section = (props) => {
   const { children } = props;
 
