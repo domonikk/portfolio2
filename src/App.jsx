@@ -2,15 +2,21 @@ import { Canvas } from "@react-three/fiber";
 import { Experience } from "./components/Experience";
 import { ScrollControls, Scroll } from "@react-three/drei";
 import Interface from "./components/Interface";
-import WorkExperience from "./components/WorkExperience";
+import { MotionConfig } from "framer-motion";
 import { useState } from "react";
 import ScrollManager from "./components/ScrollManager";
 import Menu from "./components/Menu";
+import { framerMotionConfig } from "./config.js";
 
 function App() {
   const [section, setSection] = useState(0);
   return (
     <>
+      <MotionConfig
+        transition={{
+          ...framerMotionConfig,
+        }}
+      ></MotionConfig>
       <Canvas shadows camera={{ position: [0, 3, 10], fov: 32 }}>
         <color attach="background" args={["#ececec"]} />
         <ScrollControls pages={4} damping={0.1}>
@@ -20,11 +26,15 @@ function App() {
           </Scroll>
           <Scroll html>
             <Interface />
-            <WorkExperience />
           </Scroll>
         </ScrollControls>
       </Canvas>
       <Menu onSectionChange={setSection} />
+      <MotionConfig
+        transition={{
+          ...framerMotionConfig,
+        }}
+      ></MotionConfig>
     </>
   );
 }

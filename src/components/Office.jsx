@@ -10,11 +10,7 @@ export function Office(props) {
   const { nodes, materials } = useGLTF("models/new-room2.glb");
   return (
     <group {...props} dispose={null}>
-      <group
-        position={[-0.431, -0.394, -0.15]}
-        rotation={[-1.558, 0.013, 3.087]}
-        scale={0.005}
-      >
+      <group position={[-0.07, 0, -1.52]} rotation={[0, -Math.PI / 2, 0]}>
         <group rotation={[Math.PI / 2, 0, 0]}>
           <mesh
             geometry={nodes.Base_Base_0.geometry}

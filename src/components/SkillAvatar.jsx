@@ -9,10 +9,10 @@ import { Avatar } from "./Avatar";
 import { Office } from "./Office";
 import { useControls } from "leva";
 import { useRef, useState, useEffect } from "react";
-import { motion } from "framer-motion-3d";
+import { motion } from "framer-motion";
 import * as THREE from "three";
 
-export const Experience = () => {
+const SkillAvatar = () => {
   const characterContainerAboutref = useRef();
   const { viewport } = useThree();
   const [section, setSection] = useState(0);
@@ -28,9 +28,9 @@ export const Experience = () => {
     <>
       <Sky />
       <Environment preset="sunset" />
-      <motion.group>
+      <group position={[1.5, 1, 1]}>
         <Office />
-      </motion.group>
+      </group>
       <group
         ref={characterContainerAboutref}
         name="typing"
@@ -43,3 +43,5 @@ export const Experience = () => {
     </>
   );
 };
+
+export default SkillAvatar;
