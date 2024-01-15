@@ -7,6 +7,8 @@ const Menu = (props) => {
       <div class="fixed z-50 w-full h-16 max-w-lg -translate-x-1/2 bg-white border border-gray-200 rounded-full bottom-4 left-1/2 dark:bg-gray-700 dark:border-gray-600">
         <div class="grid h-full max-w-lg grid-cols-5 mx-auto">
           <button
+            label="About"
+            onClick={() => onSectionChange(0)}
             data-tooltip-target="tooltip-home"
             type="button"
             class="inline-flex flex-col items-center justify-center px-5 rounded-s-full hover:bg-gray-50 dark:hover:bg-gray-800 group"
@@ -32,6 +34,8 @@ const Menu = (props) => {
           </div>
 
           <button
+            label="Skills"
+            onClick={() => onSectionChange(1)}
             data-tooltip-target="brain"
             type="button"
             class="inline-flex flex-col items-center justify-center px-5 hover:bg-gray-50 dark:hover:bg-gray-800 group"

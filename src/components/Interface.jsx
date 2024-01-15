@@ -98,24 +98,28 @@ const AboutSection = () => {
 
 const skills = [
   {
-    title: "Threejs / React Three Fiber",
-    level: 80,
+    title: "React / Wordpress",
+    level: 90,
   },
   {
-    title: "React / React Native",
+    title: "Threejs / React Three Fiber",
+    level: 20,
+  },
+  {
+    title: "CSS/JS/HTML",
     level: 90,
+  },
+  {
+    title: "Figma/ Adobe XD",
+    level: 60,
+  },
+  {
+    title: "MongoDB",
+    level: 60,
   },
   {
     title: "Nodejs",
     level: 90,
-  },
-  {
-    title: "Typescript",
-    level: 60,
-  },
-  {
-    title: "3D Modeling",
-    level: 40,
   },
 ];
 
@@ -124,10 +128,10 @@ const SkillSection = () => {
     <Section className={`relative w-full h-screen mx-auto`}>
       <motion.div
         whileInView={"visible"}
-        className="pl-7 flex flex-row flex-col items-start gap-5"
+        className="pl-12 flex flex-row flex-col items-start gap-5"
       >
         <h2 className="text-5xl font-bold">Skills</h2>
-        <div className=" mt-8 space-y-4">
+        <div className=" mt-6 space-y-4">
           {skills.map((skill, index) => (
             <div className="w-64" key={index}>
               <motion.h3

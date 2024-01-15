@@ -4,6 +4,7 @@ import { ScrollControls, Scroll } from "@react-three/drei";
 import Interface from "./components/Interface";
 import { MotionConfig } from "framer-motion";
 import { useState } from "react";
+import { Leva } from "leva";
 import ScrollManager from "./components/ScrollManager";
 import Menu from "./components/Menu";
 import { framerMotionConfig } from "./config.js";
@@ -35,6 +36,7 @@ function App() {
           ...framerMotionConfig,
         }}
       ></MotionConfig>
+      <Leva hidden />
     </>
   );
 }

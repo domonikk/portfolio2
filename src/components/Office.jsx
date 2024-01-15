@@ -8,9 +8,15 @@ import { useGLTF } from "@react-three/drei";
 
 export function Office(props) {
   const { nodes, materials } = useGLTF("models/new-room2.glb");
+  const { section } = props;
+
   return (
     <group {...props} dispose={null}>
-      <group position={[-0.07, 0, -1.52]} rotation={[0, -Math.PI / 2, 0]}>
+      <group
+        position={[0.45, 0.6, 0.7]}
+        rotation={[-1.5, -0.01, 3.087]}
+        scale={0.005}
+      >
         <group rotation={[Math.PI / 2, 0, 0]}>
           <mesh
             geometry={nodes.Base_Base_0.geometry}
@@ -42,7 +48,11 @@ export function Office(props) {
           />
         </group>
       </group>
-      <group rotation={[-Math.PI / 2, 0, Math.PI / 2]} scale={0.329}>
+      <group
+        rotation={[-Math.PI / 2, 0, Math.PI / 2]}
+        position={[1, 1, 1]}
+        scale={0.42}
+      >
         <group rotation={[Math.PI / 2, 0, 0]} scale={0.01}>
           <group rotation={[-Math.PI / 2, 0, -Math.PI]} scale={380}>
             <mesh
