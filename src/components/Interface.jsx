@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import React from "react";
+import { getImageUrl } from "../utils/image";
 
 const Section = (props) => {
   const { children } = props;
@@ -19,7 +20,7 @@ const Section = (props) => {
         y: 0,
         transition: {
           duration: 1,
-          delay: 0.6,
+          delay: 0.5,
         },
       }}
     >
@@ -46,13 +47,13 @@ const AboutSection = () => {
       <div
         className={`absolute inset-0 top-[120px]  max-w-7xl mx-auto  flex flex-col items-start gap-5`}
       >
-        <h1 className="text-5xl font-extrabold leading-snug">
+        <h1 className="text-5xl  text-gray-600 font-bold leading-snug ">
           Hi, I'm
           <br />
-          <span className="bg-white px-1 ">Domonique Eccleston</span>
+          <span>Domonique Eccleston</span>
         </h1>
         <motion.p
-          className="text-lg text-gray-600 stroke-white-950 mt-4"
+          className="text-lg text-gray-600 font-400  mt-5"
           initial={{
             opacity: 0,
             y: 25,
@@ -63,34 +64,16 @@ const AboutSection = () => {
           }}
           transition={{
             duration: 1,
-            delay: 1.5,
+            delay: 0.5,
           }}
         >
-          I'm a front-end developer with expertise
+          I'm a Jamaican front-end developer with expertise
           <br />
           in ReactJS and Tailwind CSS.
           <br />
           <br />
           Aspiring to become a full-stack developer.
         </motion.p>
-        <motion.button
-          className={`bg-teal-600 text-white py-4 px-8 
-      rounded-lg font-bold text-lg mt-16`}
-          initial={{
-            opacity: 0,
-            y: 25,
-          }}
-          whileInView={{
-            opacity: 1,
-            y: 0,
-          }}
-          transition={{
-            duration: 1,
-            delay: 2,
-          }}
-        >
-          Contact me
-        </motion.button>
       </div>
     </Section>
   );
@@ -98,80 +81,90 @@ const AboutSection = () => {
 
 const skills = [
   {
-    title: "React / Wordpress",
-    level: 90,
+    title: "HTML",
+    imageSrc: "skills/html.png",
   },
   {
-    title: "Threejs / React Three Fiber",
-    level: 20,
+    title: "CSS",
+    imageSrc: "skills/css.png",
   },
   {
-    title: "CSS/JS/HTML",
-    level: 90,
+    title: "Javascript",
+    imageSrc: "skills/javascript.png",
   },
   {
-    title: "Figma/ Adobe XD",
-    level: 60,
+    title: "React",
+    imageSrc: "skills/reactjs.png",
+  },
+  {
+    title: "Node",
+    imageSrc: "skills/nodejs.png",
+  },
+  {
+    title: "ThreeJS",
+    imageSrc: "skills/threejs.svg",
   },
   {
     title: "MongoDB",
-    level: 60,
+    imageSrc: "skills/mongodb.png",
   },
   {
-    title: "Nodejs",
-    level: 90,
+    title: "Figma",
+    imageSrc: "skills/figma.png",
+  },
+  {
+    title: "Github",
+    imageSrc: "skills/git.png",
+  },
+  {
+    title: "Tailwind CSS",
+    imageSrc: "skills/tailwind.png",
+  },
+  {
+    title: "Wordpress",
+    imageSrc: "skills/wordpress.png",
+  },
+  {
+    title: "Adobe XD",
+    imageSrc: "skills/adobe.png",
   },
 ];
 
 const SkillSection = () => {
   return (
-    <Section className={`relative w-full h-screen mx-auto`}>
+    <Section>
       <motion.div
         whileInView={"visible"}
-        className="pl-12 flex flex-row flex-col items-start gap-5"
+        className={`max-w-7xl mx-auto items-center justify-center gap-5`}
       >
-        <h2 className="text-5xl font-bold">Skills</h2>
-        <div className=" mt-6 space-y-4">
-          {skills.map((skill, index) => (
-            <div className="w-64" key={index}>
-              <motion.h3
-                className="text-xl font-bold text-gray-800"
-                initial={{
-                  opacity: 0,
-                }}
-                variants={{
-                  visible: {
-                    opacity: 1,
-                    transition: {
-                      duration: 1,
-                      delay: 1 + index * 0.2,
-                    },
-                  },
-                }}
-              >
-                {skill.title}
-              </motion.h3>
-              <div className="h-2 w-full bg-gray-200 rounded-full mt-2">
+        <div className="flex-col grid grid-cols-4 gap-y-6 ">
+          {skills.map((skill, index) => {
+            return (
+              <div key={index} className={skill}>
                 <motion.div
-                  className="h-full bg-primary rounded-full "
-                  style={{ width: `${skill.level}%` }}
                   initial={{
-                    scaleX: 0,
-                    originX: 0,
+                    opacity: 0,
                   }}
                   variants={{
                     visible: {
-                      scaleX: 1,
+                      opacity: 1,
                       transition: {
                         duration: 1,
                         delay: 1 + index * 0.2,
                       },
                     },
                   }}
-                />
+                >
+                  <img
+                    className="mx-auto w-1/3 rounded-full border border-gray-200 bg-white bg-opacity-40 backdrop-filter backdrop-blur-lg hover:bg-primary hover:bg-opacity-50 "
+                    src={getImageUrl(skill.imageSrc)}
+                    alt={skill.title}
+                  />
+                </motion.div>
+                <p className="text-center">{skill.title}</p>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </motion.div>
     </Section>
