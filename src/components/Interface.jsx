@@ -137,6 +137,9 @@ const SkillSection = () => {
         whileInView={"visible"}
         className={`max-w-7xl mx-auto items-center justify-center gap-5`}
       >
+        <h1 className="text-5xl  text-gray-600 font-bold leading-snug pb-5 ">
+          Skills
+        </h1>
         <div className="flex-col grid grid-cols-4 gap-y-6 ">
           {skills.map((skill, index) => {
             return (
