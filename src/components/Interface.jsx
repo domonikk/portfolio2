@@ -156,7 +156,7 @@ const SkillSection = () => {
                   }}
                 >
                   <img
-                    className="mx-auto w-1/3 rounded-full border border-gray-200 bg-white bg-opacity-40 backdrop-filter backdrop-blur-lg hover:bg-primary hover:bg-opacity-50 "
+                    className="mx-auto w-1/3 rounded-full border border-gray-200 bg-white bg-opacity-40 backdrop-filter backdrop-blur-lg hover:border-primarydark hover:bg-opacity-50 "
                     src={getImageUrl(skill.imageSrc)}
                     alt={skill.title}
                   />
