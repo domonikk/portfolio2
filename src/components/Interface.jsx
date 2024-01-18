@@ -1,5 +1,5 @@
-import { motion } from "framer-motion";
-import React from "react";
+import { motion, useTransform, useScroll } from "framer-motion";
+import React, { useRef } from "react";
 import { getImageUrl } from "../utils/image";
 
 const Section = (props) => {
@@ -8,7 +8,7 @@ const Section = (props) => {
   return (
     <section
       className={`
-   h-screen w-screen p-8 max-w-screen-2xl mx-auto
+   h-screen w-screen  max-w-screen-2xl mx-auto
   flex flex-col items-start justify-center
   `}
       initial={{
@@ -34,6 +34,7 @@ const Interface = () => {
     <div className="flex flex-col items-center w-screen">
       <AboutSection />
       <SkillSection />
+      <ProjectSection />
       <ContactSection />
     </div>
   );
@@ -43,7 +44,7 @@ export default Interface;
 
 const AboutSection = () => {
   return (
-    <Section className={`relative w-full h-screen mx-auto`}>
+    <Section className={`relative w-full h-screen mx-auto p-8`}>
       <div
         className={`absolute inset-0 top-[120px]  max-w-7xl mx-auto  flex flex-col items-start gap-5`}
       >
@@ -132,7 +133,7 @@ const skills = [
 
 const SkillSection = () => {
   return (
-    <Section>
+    <Section className="z-0 p-8">
       <motion.div
         whileInView={"visible"}
         className={`max-w-7xl mx-auto items-center justify-center gap-5`}
@@ -165,6 +166,70 @@ const SkillSection = () => {
                   />
                 </motion.div>
                 <p className="text-center">{skill.title}</p>
+              </div>
+            );
+          })}
+        </div>
+      </motion.div>
+    </Section>
+  );
+};
+
+const projects = [
+  {
+    title: "project1",
+    description: "test run 1 ",
+    imageSrc: "skills/dolla.gif",
+  },
+  {
+    title: "project2",
+    description: "test run 2 ",
+    imageSrc: "skills/dolla.gif",
+  },
+  {
+    title: "project3",
+    description: "test run 3 ",
+    imageSrc: "skills/dolla.gif",
+  },
+  {
+    title: "project4",
+    description: "test run 4 ",
+    imageSrc: "skills/dolla.gif",
+  },
+];
+
+const ProjectSection = () => {
+  return (
+    <Section>
+      <motion.div
+        whileInView={"visible"}
+        className={`sticky top-0 flex h-screen w-full items-center justify-center overflow-hidden `}
+      >
+        <div className="flex-col grid grid-cols-2  h-full w-full">
+          {projects.map((project, index) => {
+            return (
+              <div key={index} className={project}>
+                <motion.div
+                  initial={{
+                    opacity: 0,
+                  }}
+                  variants={{
+                    visible: {
+                      opacity: 1,
+                      transition: {
+                        duration: 1,
+                        delay: 1 + index * 0.2,
+                      },
+                    },
+                  }}
+                  className="justify-center items-center max-h-[250px] border border-gray-200  "
+                >
+                  <img
+                    className="max-h-[500px]  w-full object-cover rounded-xl"
+                    src={getImageUrl(project.imageSrc)}
+                    alt="/"
+                  />
+                </motion.div>
               </div>
             );
           })}

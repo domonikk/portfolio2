@@ -449,6 +449,7 @@ z"
             <div class="tooltip-arrow" data-popper-arrow></div>
           </div>
           <button
+            onClick={() => onSectionChange(2)}
             data-tooltip-target="tooltip-settings"
             type="button"
             class="inline-flex flex-col items-center justify-center px-5 hover:bg-gray-50 dark:hover:bg-gray-800 group"
@@ -473,6 +474,7 @@ z"
             <div class="tooltip-arrow" data-popper-arrow></div>
           </div>
           <button
+            onClick={() => onSectionChange(3)}
             data-tooltip-target="tooltip-profile"
             type="button"
             class="inline-flex flex-col items-center justify-center px-5 rounded-e-full hover:bg-gray-50 dark:hover:bg-gray-800 group"
