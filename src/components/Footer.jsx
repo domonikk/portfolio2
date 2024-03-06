@@ -14,42 +14,8 @@ const Footer = () => {
         <a href="https://flowbite.com/" class="hover:underline">
           Domonique Eccleston
         </a>
-        . All Rights Reserved.
       </span>
-      <ul class="flex flex-wrap items-center mt-3 text-med font-medium text-gray-500 dark:text-gray-400 sm:mt-0 ">
-        <li>
-          <a
-            href="#"
-            class="text-gray-500 hover:text-gray-900 dark:hover:text-white me-4 md:me-6 "
-          >
-            <FontAwesomeIcon icon={faInstagram} />
-            <span class="sr-only">Instagram page</span>
-          </a>
-        </li>
-        <li>
-          <a
-            href="#"
-            class="text-gray-500 hover:text-gray-900 dark:hover:text-white me-4 md:me-6"
-          >
-            <FontAwesomeIcon icon={faLinkedin} />
-            <span class="sr-only">Linkedin page</span>
-          </a>
-        </li>
-        <li>
-          <a
-            href="#"
-            class="text-gray-500 hover:text-gray-900 dark:hover:text-white me-4 md:me-6"
-          >
-            <FontAwesomeIcon icon={faGithub} />
-            <span class="sr-only">Github page</span>
-          </a>
-        </li>
-        <li>
-          <a href="#" class="hover:underline">
-            domonique.eccleston@gmail.com
-          </a>
-        </li>
-      </ul>
+      <span> . All Rights Reserved.</span>
     </div>
   );
 };
