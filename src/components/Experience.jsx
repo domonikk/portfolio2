@@ -55,10 +55,13 @@ export const Experience = (props) => {
             />
           </mesh>
         </Float>
-        <group scale={[2.5, 2.5, 2.5]} position-y={-2} position-x={2}>
+        <group scale={[1.1, 1.1, 1.1]} position-y={-0.45} position-x={2} position-z={2}>
           <Avatar animation={section === 0 ? "Falling" : "Thinking"} />
         </group>
-        {/*<Office section={section} />*/}
+        {/*<Office section={section} />*/} 
+        <group scale={[0.7, 0.7,  0.7]} position-y={-.1} position-x={1}>
+          <Office/>
+        </group>
       </motion.group>
     </>
   );
