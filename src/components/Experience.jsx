@@ -21,6 +21,34 @@ import * as THREE from "three";
 export const Experience = (props) => {
   const { viewport } = useThree();
   const { section } = props;
+  
+  // Calculate responsive scaling factors based on viewport size
+  const isSmallScreen = viewport.width < 5;
+  const isMediumScreen = viewport.width >= 5 && viewport.width < 10;
+  
+  // Responsive scale values
+  const mainGroupScale = isSmallScreen ? 0.8 : isMediumScreen ? 0.9 : 1.1;
+  const officeScale = isSmallScreen ? 0.5 : isMediumScreen ? 0.6 : 0.7;
+  const sphereScale = isSmallScreen ? 3 : isMediumScreen ? 3.5 : 4;
+  const smallSphereScale = isSmallScreen ? [0.8, 1.6, 2.4] : isMediumScreen ? [0.9, 1.8, 2.7] : [1, 2, 3];
+  
+  // Responsive positions
+  const mainGroupPosition = {
+    x: isSmallScreen ? 1 : isMediumScreen ? 1.5 : 2,
+    y: -0.45,
+    z: isSmallScreen ? 1 : isMediumScreen ? 1.5 : 2
+  };
+  
+  const officePosition = {
+    x: isSmallScreen ? 0.5 : isMediumScreen ? 0.75 : 1,
+    y: -0.1,
+    z: 0
+  };
+  
+  // Use useEffect to log viewport changes (optional, for debugging)
+  useEffect(() => {
+    console.log("Viewport width:", viewport.width);
+  }, [viewport.width]);
 
   return (
     <>
@@ -32,7 +60,7 @@ export const Experience = (props) => {
         }}
       >
         <Float>
-          <mesh scale={[4, 4, 4]} position={[5, -5, -18]}>
+          <mesh scale={[sphereScale, sphereScale, sphereScale]} position={[5, -5, -18]}>
             <sphereGeometry />
             <MeshDistortMaterial
               opacity={0.8}
@@ -44,7 +72,7 @@ export const Experience = (props) => {
           </mesh>
         </Float>
         <Float>
-          <mesh position={[4, -3, -15]} scale={[1, 2, 3]}>
+          <mesh position={[4, -3, -15]} scale={smallSphereScale}>
             <sphereGeometry />
             <MeshDistortMaterial
               opacity={0.8}
@@ -55,11 +83,21 @@ export const Experience = (props) => {
             />
           </mesh>
         </Float>
-        <group scale={[1.1, 1.1, 1.1]} position-y={-0.45} position-x={2} position-z={2}>
+        <group 
+          scale={[mainGroupScale, mainGroupScale, mainGroupScale]} 
+          position-y={mainGroupPosition.y} 
+          position-x={mainGroupPosition.x} 
+          position-z={mainGroupPosition.z}
+        >
           <Avatar animation={section === 0 ? "Falling" : "Thinking"} />
         </group>
-        {/*<Office section={section} />*/} 
-        <group scale={[0.7, 0.7,  0.7]} position-y={-.1} position-x={1}>
+        {/*<Office section={section} />*/}
+        <group 
+          scale={[officeScale, officeScale, officeScale]} 
+          position-y={officePosition.y} 
+          position-x={officePosition.x}
+          position-z={officePosition.z}
+        >
           <Office/>
         </group>
       </motion.group>
