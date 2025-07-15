@@ -7,18 +7,17 @@ const Section = ({ children, className = "", ...props }) => {
 
   return (
      <motion.section
-      className={` w-full
-    max-w-screen-xl
-    mx-auto
-    px-4 sm:px-6 md:px-12
-    py-10 sm:py-16 md:py-20
-    min-h-fit
-    lg:min-h-screen
-    relative 
-    justify-center
-    z-0
-    overflow-hidden
-     md:items-center md:justify-center
+      className={`  w-full
+          max-w-screen-xl
+          mx-auto
+          px-4 sm:px-6 md:px-12
+          py-10 sm:py-16 md:py-20
+          min-h-fit
+          lg:min-h-screen
+          lg:flex lg:flex-col lg:items-center lg:justify-center
+          relative
+          z-0
+          overflow-hidden
     ` 
     
         }
@@ -30,7 +29,7 @@ const Section = ({ children, className = "", ...props }) => {
       }} 
        viewport={{ once: true }}
       {...props}
-    >
+    > 
       {children}
     </motion.section>
   );
@@ -38,7 +37,7 @@ const Section = ({ children, className = "", ...props }) => {
 
 const Interface = () => {
   return (
-    <div className="flex flex-col w-full">
+    <div className=" w-full">
       <AboutSection />
       <SkillSection />  
       <ProjectSection/>
@@ -51,9 +50,9 @@ export default Interface;
 
 const AboutSection = () => {
   return (
-    <Section className={`relative w-full h-screen mx-auto p-8`}>
+    <Section className={`relative w-full h-screen  mx-auto  p-8`}>
       <div
-        className={`max-w-7xl mx-auto flex flex-col gap-5 `}
+        className={`max-w-7xl mx-auto flex flex-col gap-5 items-center justify-center`}
       >
         <h1 className="text-5xl  text-gray-600 font-bold leading-snug ">
           Hi, I'm
@@ -140,7 +139,7 @@ const skills = [
 
 const SkillSection = () => {
   return (
-    <Section className="h-screen sm:h-[250vh] py-10 sm:py-20 flex flex-col justify-center">
+    <Section className="h-screen w-full sm:h-[250vh] py-10 sm:py-20 flex flex-col items-center">
       <motion.div
         whileInView={"visible"}
         className={`max-w-7xl mx-auto items-center justify-center gap-5`}
