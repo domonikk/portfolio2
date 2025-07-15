@@ -8,7 +8,7 @@ import {
 
 const Footer = () => {
   return (
-    <div class="w-full mx-auto max-w-screen-xl pt-7 pb-2 md:flex md:items-stretch md:justify-between">
+    <div class="w-full mx-auto max-w-screen-xl pt-7 pb-2 mb-40 md:flex md:items-stretch md:justify-between">
       <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">
         © 2023{" "}
         <a href="https://flowbite.com/" class="hover:underline">

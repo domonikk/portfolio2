@@ -3,38 +3,45 @@ import React, { useRef } from "react";
 import { getImageUrl } from "../utils/image";
 import { ValidationError, useForm } from "@formspree/react";
 
-const Section = (props) => {
-  const { children } = props;
+const Section = ({ children, className = "", ...props }) => {
 
   return (
-    <section
-      className={`
-   h-screen w-screen  max-w-screen-2xl mx-auto
-  flex flex-col items-start justify-center
-  `}
-      initial={{
-        opacity: 0,
-        y: 50,
-      }}
+     <motion.section
+      className={` w-full
+    max-w-screen-xl
+    mx-auto
+    px-4 sm:px-6 md:px-12
+    py-10 sm:py-16 md:py-20
+    min-h-fit
+    lg:min-h-screen
+    relative 
+    justify-center
+    z-0
+    overflow-hidden
+     md:items-center md:justify-center
+    ` 
+    
+        }
+      initial={{ opacity: 0, y: 50 }}
       whileInView={{
         opacity: 1,
         y: 0,
-        transition: {
-          duration: 1,
-          delay: 0.5,
-        },
-      }}
+        transition: { duration: 1, delay: 0.5 },
+      }} 
+       viewport={{ once: true }}
+      {...props}
     >
       {children}
-    </section>
+    </motion.section>
   );
 };
 
 const Interface = () => {
   return (
-    <div className="flex flex-col items-center w-screen">
+    <div className="flex flex-col w-full">
       <AboutSection />
-      <SkillSection /> 
+      <SkillSection />  
+      <ProjectSection/>
       <ContactSection />
     </div>
   );
@@ -46,7 +53,7 @@ const AboutSection = () => {
   return (
     <Section className={`relative w-full h-screen mx-auto p-8`}>
       <div
-        className={`absolute inset-0 top-[250px] align-middle max-w-7xl mx-auto  flex flex-col  gap-5 `}
+        className={`max-w-7xl mx-auto flex flex-col gap-5 `}
       >
         <h1 className="text-5xl  text-gray-600 font-bold leading-snug ">
           Hi, I'm
@@ -133,7 +140,7 @@ const skills = [
 
 const SkillSection = () => {
   return (
-    <Section className="z-0 p-8">
+    <Section className="h-screen sm:h-[250vh] py-10 sm:py-20 flex flex-col justify-center">
       <motion.div
         whileInView={"visible"}
         className={`max-w-7xl mx-auto items-center justify-center gap-5`}
@@ -141,7 +148,7 @@ const SkillSection = () => {
         <h1 className="text-5xl  text-gray-600 font-bold leading-snug pb-5 ">
           Skills
         </h1>
-        <div className="flex-col grid grid-cols-4 gap-y-6 ">
+        <div className="grid grid-cols-2 grid-rows-6 sm:grid-cols-4 sm:grid-rows-none gap-y-6 gap-x-4">
           {skills.map((skill, index) => {
             return (
               <div key={index} className={skill}>
@@ -204,14 +211,16 @@ const projects = [
 
 const ProjectSection = () => {
   return (
-    <Section>
+    <Section className="h-[200vh]  py-10 sm:py-50 flex flex-col justify-center">
       <motion.div
-        
         whileInView="visible"
-       
+        className="px-4 sm:px-6 md:px-0 flex flex-col space-y-12 sm:space-y-14 md:space-y-16"
       >
-        <h2 className="text-4xl font-bold text-center mb-12">My Projects</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <h2 className="text-4xl font-bold text-center mt-10 sm:mt-12 mb-8 sm:mb-10">
+          My Projects
+        </h2>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-12 sm:gap-y-14 gap-x-6 sm:gap-x-8">
           {projects.map((project, index) => (
             <motion.div
               key={index}
@@ -246,7 +255,7 @@ const ProjectSection = () => {
                       href={project.demoLink} 
                       target="_blank" 
                       rel="noopener noreferrer"
-                      className="bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 transition"
+                      className="bg-primary text-white px-4 py-2 rounded-lg hover:bg-primary transition"
                     >
                       Live Demo
                     </a>
@@ -256,7 +265,7 @@ const ProjectSection = () => {
                       href={project.githubLink} 
                       target="_blank" 
                       rel="noopener noreferrer"
-                      className="border border-indigo-600 text-indigo-600 px-4 py-2 rounded-lg hover:bg-indigo-50 transition"
+                      className="border border-primary text-primary px-4 py-2 rounded-lg hover:bg-indigo-50 transition"
                     >
                       GitHub
                     </a>
@@ -267,18 +276,18 @@ const ProjectSection = () => {
           ))}
         </div> 
 
-        <div className="text-center">
-                <button
-                  
-                  className="bg-indigo-600 text-white py-4 px-10 rounded-lg font-bold text-lg hover:bg-indigo-700 transition-colors duration-300 ease-in-out"
-                >
-                  View More 
-                </button>
-              </div>
+        <div className="text-center mt-12 sm:mt-14">
+          <button
+            className="bg-primary text-white py-4 px-10 rounded-lg font-bold text-lg hover:bg-primary transition-colors duration-300 ease-in-out"
+          >
+            View More 
+          </button>
+        </div>
       </motion.div>
     </Section>
   );
 };
+
 
 
 const ContactSection = () => {
@@ -308,7 +317,7 @@ const ContactSection = () => {
                   name="name"
                   id="name"
                   required
-                  className="block w-full rounded-md border-0 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 p-3"
+                  className="block w-full rounded-md border-0 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary p-3"
                 />
               </div>
 
@@ -324,7 +333,7 @@ const ContactSection = () => {
                   name="email"
                   id="email"
                   required
-                  className="block w-full rounded-md border-0 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 p-3"
+                  className="block w-full rounded-md border-0 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary p-3"
                 />
                 <ValidationError
                   className="mt-2 text-red-500"
@@ -345,7 +354,7 @@ const ContactSection = () => {
                   name="message"
                   id="message"
                   required
-                  className="h-40 block w-full rounded-md border-0 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 p-3"
+                  className="h-40 block w-full rounded-md border-0 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary p-3"
                 />
                 <ValidationError
                   className="mt-2 text-red-500"
@@ -357,7 +366,7 @@ const ContactSection = () => {
                 <button
                   type="submit"
                   disabled={state.submitting}
-                  className="bg-indigo-600 text-white py-4 px-10 rounded-lg font-bold text-lg hover:bg-indigo-700 transition-colors duration-300 ease-in-out"
+                  className="bg-primary text-white py-4 px-10 rounded-lg font-bold text-lg hover:bg-primary transition-colors duration-300 ease-in-out"
                 >
                   {state.submitting ? 'Sending...' : 'Submit'}
                 </button>
